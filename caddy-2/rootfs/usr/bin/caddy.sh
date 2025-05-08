@@ -100,6 +100,17 @@ caddy_fmt() {
     fi
 }
 
+mount_extra_files() {
+	for file in $(bashio::config 'mount_files' | jq -r '.[]'); do
+		if [[ -f "$file" ]]; then
+			cp "$file" /etc/caddy/
+			echo "Mounted extra file: $file to /etc/caddy/"
+		else
+			echo "Warning: $file not found!"
+		fi
+	done
+}
+
 main() {
     bashio::log.trace "${FUNCNAME[0]}"
 
@@ -140,6 +151,11 @@ main() {
     if bashio::config.true 'caddy_fmt'; then
         caddy_fmt
     fi
+	
+	# Mount extra files
+	if bashio::config.has_value 'mount_files'; then
+		mount_extra_files
+	fi
 
     # Run Caddy
     bashio::log.info "Run Caddy..."

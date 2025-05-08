@@ -27,6 +27,7 @@ options:
   args: []
   env_vars: []
   log_level: info
+  mount_files: null
 schema:
   non_caddyfile_config:
     email: email?
@@ -41,6 +42,8 @@ schema:
     - name: str
       value: str
   log_level: list(trace|debug|info|notice|warning|error|fatal)
+  mount_files:
+    - str
 environment:
   LOG_FORMAT: "{LEVEL}: {MESSAGE}"
 init: false
