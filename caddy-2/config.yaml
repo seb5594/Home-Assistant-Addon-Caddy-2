@@ -1,6 +1,6 @@
 ---
 name: Caddy 2
-version: dev
+version: 2.0.3.1
 slug: caddy-2
 description: Open source web and proxy server with automatic HTTPS
 url: "https://github.com/einschmidt/addon-caddy-2"
@@ -27,7 +27,7 @@ options:
   args: []
   env_vars: []
   log_level: info
-  mount_files: null
+  mount_files: []
 schema:
   non_caddyfile_config:
     email: email?
