@@ -102,11 +102,11 @@ caddy_fmt() {
 
 mount_extra_files() {
 	for file in $(bashio::config 'mount_files' | jq -r '.[]'); do
-		if [[ -f "/config/$file" ]]; then
-			cp "/config/$file" /etc/caddy/
-			echo "Mounted extra file: $file to /etc/caddy/"
+		if [[ -f "/config/${file}" ]]; then
+			cp "/config/${file}" /etc/caddy/
+			echo "Mounted extra file: ${file} to /etc/caddy/"
 		else
-			echo "Warning: $file not found!"
+			echo "Warning: ${file} not found!"
 		fi
 	done
 }
