@@ -3,7 +3,7 @@ name: Caddy 2
 version: 2.0.3.1dev5
 slug: caddy-2
 description: Open source web and proxy server with automatic HTTPS
-url: "https://github.com/einschmidt/addon-caddy-2"
+url: "https://github.com/seb5594/Home-Assistant-Addon-Caddy-2"
 arch:
   - armhf
   - armv7
